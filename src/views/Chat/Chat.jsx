@@ -25,6 +25,9 @@ export default function Chat() {
 
   useEffect(() => {
     getMessages().then(setMessages);
+
+    subscribe(handleMessageReceived);
+    return unsubscribe;
     // TODO: Subscribe to message changes, using handleMessageReceived
     // as the callback function
     // Don't forget to return a cleanup method (`unsubscribe`)
